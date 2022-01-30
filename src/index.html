@@ -12,14 +12,14 @@
 </head>
 <body>
     <div class="city">
-        <h2>Huamantla, MX</h2>
+        <h2 id="cityName" >Huamantla, MX</h2>
     </div>
 
     <div class="weather-icon">
-        <img src="./assets/images/02d@2x.png" alt="">
+        <img id="weather-icon" src="./assets/images/02d@2x.png" alt="">
     </div>
 
-    <div class="weather-temp">
+    <div class="weather-temp" id="weather-temp">
         <h3>17.58º</h3>
         <p>feels like 16.26º</p>
     </div>
@@ -34,6 +34,8 @@
         <input type="text" id="search" placeholder="Search your city">
     </div>
 
-    <script src="./assets/js/index.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="./assets/js/index.js"></script>
 </body>
 </html>
