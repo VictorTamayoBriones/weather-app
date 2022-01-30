@@ -2,6 +2,7 @@ const $cityName = document.querySelector('#cityName');
 const $weatherIcon = document.querySelector('#weather-icon');
 const $weatherTemp = document.querySelector('#weather-temp');
 const $greeting = document.querySelector('#greeting');
+const $search = document.querySelector('form');
 
 const daysOfWeek=['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
@@ -26,5 +27,21 @@ const getWeatherHuamantla = async ()=>{
     $weatherTemp.childNodes[3].textContent = weather.feels;
     $greeting.childNodes[3].textContent = daysOfWeek[day];
 }
+
+const getWeatherBySeacrh = async ( city )=>{
+    const res = await axios.get(`${baseUrl}data/2.5/weather?q=${city}&appid=25745ce0da2954b896c845ab208d6851&units=metric`);
+    console.log(res.data);
+}
+
+$search.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    const $input = $search.querySelector('input');
+
+    if( $input.value.length > 3){
+        const city = $input.value;
+        getWeatherBySeacrh(city);
+    }
+
+});
 
 getWeatherHuamantla();
