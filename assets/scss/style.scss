@@ -17,6 +17,45 @@ body{
 
 .city{
     font-size: 20px;
-    font-weight: 600;
-    // align-self: flex-start;
+    h2{
+        font-weight: 600;
+    }
+}
+
+.weather-icon{
+    img{
+        scale: 3;
+    }
+}
+
+.weather-temp, .greeting{
+    text-align: center;
+    h3{
+        font-weight: 700;
+        font-size: 80px;
+    }
+    p{
+        font-weight: 600;
+        font-size: 30px;
+    }
+}
+
+.seacrh-bar{
+    align-self: flex-end;
+    width: 90%;
+    height: max-content;
+    padding: 5px;
+    margin: auto;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    border: solid 1px #ccc;
+    gap: 10px;
+    transform: translateY(40px);
+    input{
+        width: 100%;
+        border: none;
+        outline: none;
+        height: 100%;
+    }
 }
