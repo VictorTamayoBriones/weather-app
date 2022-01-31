@@ -13,12 +13,16 @@ body{
     grid-template-rows: 80px repeat(4, 1fr);
     align-items: center;
     justify-items: center;
+    background: rgb(4, 25, 43);
+    color: #fff;
+    letter-spacing: 2px;
 }
 
 .city{
-    font-size: 20px;
+    font-size: 22px;
     h2{
         font-weight: 600;
+        text-shadow: 2px 2px 0px orange;
     }
 }
 
@@ -57,6 +61,9 @@ body{
         border: none;
         outline: none;
         height: 100%;
+        background: transparent;
+        color: #fff;
+        font-size: 18px;
     }
 }
 

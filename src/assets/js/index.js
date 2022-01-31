@@ -26,6 +26,7 @@ const showWeatherData = (data)=>{
     $weatherIcon.src = `http://openweathermap.org/img/wn/${icon}@2x.png`
     $weatherTemp.childNodes[1].textContent = weather.temp;
     $weatherTemp.childNodes[3].textContent = weather.feels;
+    $greeting.childNodes[1].textContent = weather.desc;
     $greeting.childNodes[3].textContent = daysOfWeek[day];
 
 }

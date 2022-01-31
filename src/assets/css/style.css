@@ -13,13 +13,17 @@ body {
   grid-template-rows: 80px repeat(4, 1fr);
   align-items: center;
   justify-items: center;
+  background: #04192b;
+  color: #fff;
+  letter-spacing: 2px;
 }
 
 .city {
-  font-size: 20px;
+  font-size: 22px;
 }
 .city h2 {
   font-weight: 600;
+  text-shadow: 2px 2px 0px orange;
 }
 
 .weather-icon img {
@@ -56,6 +60,9 @@ body {
   border: none;
   outline: none;
   height: 100%;
+  background: transparent;
+  color: #fff;
+  font-size: 18px;
 }
 
 form {
