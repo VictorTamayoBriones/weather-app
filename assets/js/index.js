@@ -8,7 +8,7 @@ const $input = $search.querySelector('input');
 const daysOfWeek=['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
 const baseUrl = 'http://api.openweathermap.org/';
-
+const apiKey = '25745ce0da2954b896c845ab208d6851';
 
 const showWeatherData = (data)=>{
 
@@ -32,12 +32,12 @@ const showWeatherData = (data)=>{
 }
 
 const getWeatherHuamantla = async ()=>{
-    const res = await axios.get(`${baseUrl}data/2.5/weather?q=Huamantla&appid=25745ce0da2954b896c845ab208d6851&units=metric`);
+    const res = await axios.get(`${baseUrl}data/2.5/weather?q=Huamantla&appid=${apiKey}&units=metric`);
     showWeatherData(res.data);
 }
 
 const getWeatherBySeacrh = async ( city )=>{
-    const res = await axios.get(`${baseUrl}data/2.5/weather?q=${city}&appid=25745ce0da2954b896c845ab208d6851&units=metric`);
+    const res = await axios.get(`${baseUrl}data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`);
     showWeatherData(res.data);
 }
 
