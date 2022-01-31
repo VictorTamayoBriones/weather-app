@@ -3,14 +3,15 @@ const $weatherIcon = document.querySelector('#weather-icon');
 const $weatherTemp = document.querySelector('#weather-temp');
 const $greeting = document.querySelector('#greeting');
 const $search = document.querySelector('form');
+const $input = $search.querySelector('input');
 
 const daysOfWeek=['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
 const baseUrl = 'http://api.openweathermap.org/';
 
-const getWeatherHuamantla = async ()=>{
-    const res = await axios.get(`${baseUrl}data/2.5/weather?q=Huamantla&appid=25745ce0da2954b896c845ab208d6851&units=metric`);
-    const data = res.data;
+
+const showWeatherData = (data)=>{
+
     const weather = {
         desc: data.weather[0].description,
         icon: data.weather[0].icon,
@@ -26,22 +27,27 @@ const getWeatherHuamantla = async ()=>{
     $weatherTemp.childNodes[1].textContent = weather.temp;
     $weatherTemp.childNodes[3].textContent = weather.feels;
     $greeting.childNodes[3].textContent = daysOfWeek[day];
+
+}
+
+const getWeatherHuamantla = async ()=>{
+    const res = await axios.get(`${baseUrl}data/2.5/weather?q=Huamantla&appid=25745ce0da2954b896c845ab208d6851&units=metric`);
+    showWeatherData(res.data);
 }
 
 const getWeatherBySeacrh = async ( city )=>{
     const res = await axios.get(`${baseUrl}data/2.5/weather?q=${city}&appid=25745ce0da2954b896c845ab208d6851&units=metric`);
-    console.log(res.data);
+    showWeatherData(res.data);
 }
 
-$search.addEventListener('submit', (e)=>{
+
+const handleSubmit = (e)=>{
     e.preventDefault();
-    const $input = $search.querySelector('input');
+    const city = $input.value;
+    
+    $input.value.length > 3 ? getWeatherBySeacrh(city) : alert('Ingresa una ciudad valida');
+    $input.value = '';
+}
 
-    if( $input.value.length > 3){
-        const city = $input.value;
-        getWeatherBySeacrh(city);
-    }
-
-});
-
+$search.addEventListener('submit', handleSubmit);
 getWeatherHuamantla();
