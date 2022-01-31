@@ -19,7 +19,7 @@ body {
 }
 
 .city {
-  font-size: 22px;
+  font-size: 24px;
 }
 .city h2 {
   font-weight: 600;
@@ -40,6 +40,9 @@ body {
 .weather-temp p, .greeting p {
   font-weight: 600;
   font-size: 30px;
+}
+.weather-temp p:nth-child(1), .greeting p:nth-child(1) {
+  color: orange;
 }
 
 .seacrh-bar {

@@ -19,7 +19,7 @@ body{
 }
 
 .city{
-    font-size: 22px;
+    font-size: 24px;
     h2{
         font-weight: 600;
         text-shadow: 2px 2px 0px orange;
@@ -41,6 +41,9 @@ body{
     p{
         font-weight: 600;
         font-size: 30px;
+        &:nth-child(1){
+            color: orange;
+        }
     }
 }
 
